@@ -14,6 +14,21 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // this.myForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'female'
+    // })
+    this.myForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      },
+      questionAnswer: 'Eurídice'
+    })
   }
   onSubmit(form: NgForm) {
     console.log(this.myForm)

@@ -1,18 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+      <!-- #f ==> localReference -->
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
         <div id="user-data">
           <div class="form-group">
+
             <label for="username">Username</label>
             <input
               type="text"
               id="username"
               class="form-control"
               ngModel
-              name=username>
+              name=username
+              required>
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
+
           <div class="form-group">
             <label for="email">Mail</label>
             <input
@@ -20,10 +26,14 @@
               id="email"
               class="form-control"
               ngModel
-              name="email">
+              name="email"
+              required
+              email>
           </div>
         </div>
+
         <div class="form-group">
+
           <label for="secret">Secret Questions</label>
           <select
             id="secret"
@@ -33,9 +43,19 @@
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
+
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="f.invalid"> <!-- botão disabled até o form estar válido -->
+          Submit
+        </button>
+
       </form>
+
+
     </div>
   </div>
 </div>

@@ -9,3 +9,7 @@ input.ng-invalid.ng-touched {
 span.help-block {
   color: tomato;
 }
+
+p.group-warning {
+  color: tomato;
+}

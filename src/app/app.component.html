@@ -5,7 +5,9 @@
       <!-- #f ==> localReference -->
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-        <div id="user-data">
+        <div id="user-data-group"
+          ngModelGroup="userData"
+          #userData="ngModelGroup">
           <div class="form-group">
 
             <label for="username">Username</label>
@@ -31,9 +33,15 @@
               email
               #email=ngModel>
           </div>
+          <p class="group-warning"
+            *ngIf="!userData.valid && userData.touched">
+            UserData is not valid
+          </p>
+
           <span class="help-block" *ngIf="!email.valid && email.touched">
             Please enter a valid email addres
           </span>
+
         </div>
 
         <div class="form-group">

@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   @ViewChild('f', { static: false }) myForm: NgForm;
   defaultQuestion: string = 'grandma';
-
+  answer: string = '';
 
   suggestUserName() {
     const suggestedName = 'Superuser';

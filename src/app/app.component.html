@@ -51,6 +51,16 @@
 
         </div>
 
+        <label for="questionAnswer">Answer here:</label>
+        <div class="form-group">
+          <textarea
+            name="questionAnswer"
+            cols="30"
+            rows="3"
+            [(ngModel)]="answer"></textarea>
+            <p>Your answer: {{ answer }}</p>
+        </div>
+
         <button
           class="btn btn-primary"
           type="submit"
